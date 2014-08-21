@@ -20,11 +20,22 @@ public class NewMain {
        n.InsertEnd("localoca", "shakira", "latin", "sale el sol", 13, "", "");
        n.InsertEnd("as", "as", "as", "as", 2, "", "");
        n.InsertEnd("qw", "", "", "", 3, "", "");
-       //n.delete("localoca");
-       n.delete("as");
-       n.delete("qw");
-       n.printconsole();
        //n.printconsole();
+       try
+        {
+            MP3source Player=new MP3source();
+            Player.AbrirFichero("/Users/marco_197/Downloads/05 - The Number Of The Beast.mp3");
+            
+            Player.Play();
+        }
+ 
+ 
+ 
+        catch(Exception Error)
+        {
+            Error.printStackTrace();
+        }
+
                
         
     }
