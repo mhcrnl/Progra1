@@ -242,4 +242,4 @@ public class Main extends javax.swing.JFrame {
 //Image image=GenerateImage.toImage(true);  //this generates an image file
 //ImageIcon icon = new ImageIcon(image); 
 //JLabel thumb = new JLabel();
-//thumb.setIcon(icon);
+//thumb.setIcon(icon);}//5555555

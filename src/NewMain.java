@@ -17,6 +17,8 @@ public class NewMain {
     public static void main(String[] args) {
         // TODO code application logic here
        Library n = new Library();
+       GetPath x = new GetPath();
+       x.GetPath();
        System.out.println("Holis");
        n.InsertEnd("localoca", "shakira", "latin", "sale el sol", 13, "", "");
        n.InsertEnd("as", "as", "as", "as", 2, "", "");
