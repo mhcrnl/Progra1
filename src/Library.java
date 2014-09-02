@@ -26,7 +26,7 @@ public class Library {
             song.prev=Last;
             Last=song;
         }
-        return this;
+        return this;//lol
     }
     
     public Library SearchArtist(String search){
