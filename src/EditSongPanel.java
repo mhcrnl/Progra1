@@ -13,7 +13,7 @@ public class EditSongPanel extends javax.swing.JFrame {
     /**
      * Creates new form EditSongPanel
      */
-    public EditSongPanel() {
+    public EditSongPanel(Library n) {
         initComponents();
     }
 
@@ -84,6 +84,11 @@ public class EditSongPanel extends javax.swing.JFrame {
         OK.setText("OK");
 
         Cancel.setText("Cancel");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,6 +182,11 @@ public class EditSongPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_CancelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -205,11 +215,7 @@ public class EditSongPanel extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EditSongPanel().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

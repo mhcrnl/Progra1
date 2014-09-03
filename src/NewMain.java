@@ -9,10 +9,7 @@
  * @author marco_197
  */
 /**
- * 
- * 
- * 
- * prueba
+
  * @author marco_197
  */
 
@@ -23,33 +20,15 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       //Library n = new Library();
+       Library n = new Library();
+       n.InsertEnd("f", "", "", "", 0, "", "");
        String ruta;
        GetPath x = new GetPath();
-       ruta = x.GetPath();
-//       System.out.println("Holis");
-//       n.InsertEnd("localoca", "shakira", "latin", "sale el sol", 13, "", "");
-//       n.InsertEnd("as", "as", "as", "as", 2, "", "");
-//       n.InsertEnd("qw", "", "", "", 3, "", "");
-//       n.delete("localoca");
-//       n.printconsole();
-       try
-        {
-            MP3source Player=new MP3source();
-            Player.AbrirFichero(ruta);
-            
-            Player.Play();
-            
-        }
- 
- 
- 
-        catch(Exception Error)
-        {
-            Error.printStackTrace();        }
-
-               
-        
-   }
+       //ruta = x.GetPath();
+       System.out.println("Holis si esta funcionando");
+       Main test =new Main(n);
+       test.setVisible(true);
+      
     
+}
 }

@@ -9,12 +9,14 @@
  * @author marco_197
  */
 public class Main extends javax.swing.JFrame {
-
+      Library song;
     /**
      * Creates new form Main
      */
-    public Main() {
+    public Main(Library n) {
         initComponents();
+        song=n;
+        song.printconsole();
     }
 
     /**
@@ -55,6 +57,7 @@ public class Main extends javax.swing.JFrame {
         SearchArtist = new javax.swing.JButton();
         SearchAlbum = new javax.swing.JButton();
         SearchGenre = new javax.swing.JButton();
+        brefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,8 +173,18 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.addTab("Player", jPanel2);
 
         Addbotton.setText("Add");
+        Addbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddbottonActionPerformed(evt);
+            }
+        });
 
         editbotton.setText("Edit");
+        editbotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editbottonActionPerformed(evt);
+            }
+        });
 
         deletebotton.setText("Delete");
 
@@ -194,6 +207,13 @@ public class Main extends javax.swing.JFrame {
         SearchAlbum.setText("By Album");
 
         SearchGenre.setText("By Genre");
+
+        brefresh.setText("Refresh");
+        brefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brefreshActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -221,7 +241,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(entrysearch, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(sSongs, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(45, Short.MAX_VALUE))
+                        .addContainerGap(52, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(sName)
                         .addGap(29, 29, 29)
@@ -231,6 +251,10 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(SearchGenre)
                         .addGap(20, 20, 20))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(brefresh)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +266,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(deletebotton))
                 .addGap(18, 18, 18)
                 .addComponent(cSongs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(brefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -254,7 +280,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(SearchArtist)
                     .addComponent(SearchAlbum)
                     .addComponent(SearchGenre))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Library", jPanel4);
@@ -280,6 +306,22 @@ public class Main extends javax.swing.JFrame {
     private void entrysearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrysearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entrysearchActionPerformed
+
+    private void AddbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbottonActionPerformed
+        // TODO add your handling code here:
+        AddPanel add = new AddPanel(song);
+        add.setVisible(true);
+    }//GEN-LAST:event_AddbottonActionPerformed
+
+    private void editbottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbottonActionPerformed
+        // TODO add your handling code here:
+        EditSongPanel edit = new EditSongPanel(song);
+        edit.setVisible(true);
+    }//GEN-LAST:event_editbottonActionPerformed
+
+    private void brefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brefreshActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_brefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,11 +351,7 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -322,6 +360,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton SearchAlbum;
     private javax.swing.JButton SearchArtist;
     private javax.swing.JButton SearchGenre;
+    private javax.swing.JButton brefresh;
     private javax.swing.JComboBox cSongs;
     private javax.swing.JButton deletebotton;
     private javax.swing.JButton editbotton;
