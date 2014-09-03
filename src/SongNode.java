@@ -71,6 +71,43 @@ public class SongNode {
     public void setPath(String Path) {
         this.Path = Path;
     }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getArtist() {
+        return Artist;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public String getAlbum() {
+        return Album;
+    }
+
+    public int getTime() {
+        return Time;
+    }
+
+    public String getCover() {
+        return Cover;
+    }
+
+    public String getPath() {
+        return Path;
+    }
+
+    public SongNode getNext() {
+        return next;
+    }
+
+    public SongNode getPrev() {
+        return prev;
+    }
+    
     
    
     

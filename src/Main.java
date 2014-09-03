@@ -188,8 +188,6 @@ public class Main extends javax.swing.JFrame {
 
         deletebotton.setText("Delete");
 
-        cSongs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel6.setText("Search:");
 
         entrysearch.addActionListener(new java.awt.event.ActionListener() {
@@ -198,15 +196,33 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        sSongs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         sName.setText("By Name");
+        sName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sNameActionPerformed(evt);
+            }
+        });
 
         SearchArtist.setText("By Artist");
+        SearchArtist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchArtistActionPerformed(evt);
+            }
+        });
 
         SearchAlbum.setText("By Album");
+        SearchAlbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchAlbumActionPerformed(evt);
+            }
+        });
 
         SearchGenre.setText("By Genre");
+        SearchGenre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchGenreActionPerformed(evt);
+            }
+        });
 
         brefresh.setText("Refresh");
         brefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -321,11 +337,38 @@ public class Main extends javax.swing.JFrame {
 
     private void brefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brefreshActionPerformed
         // TODO add your handling code here:
+        llenar(song);
     }//GEN-LAST:event_brefreshActionPerformed
+
+    private void sNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sNameActionPerformed
+
+    private void SearchArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchArtistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchArtistActionPerformed
+
+    private void SearchAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchAlbumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchAlbumActionPerformed
+
+    private void SearchGenreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchGenreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchGenreActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    public void llenar(Library n){
+SongNode aux = n.First;
+cSongs.removeAllItems();
+while(aux!=n.Last){
+            cSongs.addItem(aux.Artist +"  "+ aux.Name);
+            aux=aux.next;
+        }
+        if (aux==n.Last)
+            cSongs.addItem(aux.Artist +"  "+ aux.Name);
+}
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
