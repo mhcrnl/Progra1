@@ -1,4 +1,7 @@
-//This is the entire list of Songs
+/**
+ * This is the entire list of Songs
+ */
+ 
 public class Library { // clase en donde va a tener contenida en una lista todos los nodos que contienen canciones.
     SongNode  First; //Puntero al primer nodo de la lista
     SongNode  Last; // Puntero al ultimo nodo de la lista
@@ -6,11 +9,11 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         First = null; //Inicializacion de los punteros
         Last = null; //Inicializacion de los punteros
     }
-    /*
-    Este es el metodo que verifica si la lista esta vacia
-    primero empieza con un una sentencia if preugntando que si el primer
-    elemento de la lista es nullo si o es retorna un True y si no
-    retorna un False
+    /**
+    *Este es el metodo que verifica si la lista esta vacia
+    *primero empieza con un una sentencia if preugntando que si el primer
+    *elemento de la lista es nullo si o es retorna un True y si no
+    *retorna un False
     */
     public boolean empty(){ 
         if (First==null)                   
@@ -20,11 +23,11 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     }
     
     
-    /*
-    Este es el metetodo de insercion , es insercion al final
-    el metodo recibe como parametos los parametros del nodo para luego llamar al constructor del nodo
-    en primer lugar pregunta si la lista esta vacia, si estubiera vacia solo llama al cosntructor del nodo y asiga los punteros de primero y de ultimo la la instancia
-    si tubiera un elemento, genera la instancia del nodo y coloca el puntero de ultimo al nodo nuevo generado
+    /**
+    *Este es el metetodo de insercion , es insercion al final
+    *el metodo recibe como parametos los parametros del nodo para luego llamar al constructor del nodo
+    *en primer lugar pregunta si la lista esta vacia, si estubiera vacia solo llama al cosntructor del nodo y asiga los punteros de primero y de ultimo la la instancia
+    *si tubiera un elemento, genera la instancia del nodo y coloca el puntero de ultimo al nodo nuevo generado
     */
     public Library InsertEnd(String Name, String Artist, String Genre, String Album, int Time, String Cover, String Path){
         if (empty()){
@@ -38,14 +41,14 @@ public class Library { // clase en donde va a tener contenida en una lista todos
             song.prev=Last;
             Last=song;
         }
-        return this;//lol
+        return this;
     }
-    /*
-    Metodo que busca por artista
-    Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
-    un puntero auxiliar para hacer las iteracione y recorrer la lista
-    luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
-    si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
+    /**
+    *Metodo que busca por artista
+    *Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
+    *un puntero auxiliar para hacer las iteracione y recorrer la lista
+    *luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
+    *si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
     */
     
     public Library SearchArtist(String search){
@@ -67,12 +70,12 @@ public class Library { // clase en donde va a tener contenida en una lista todos
        
     }
     
-    /*
-    Metodo que busca por album
-    Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
-    un puntero auxiliar para hacer las iteracione y recorrer la lista
-    luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
-    si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
+    /**
+    *Metodo que busca por album
+    *Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
+    *un puntero auxiliar para hacer las iteracione y recorrer la lista
+    *luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
+    *si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
     */
     
     public Library SearchAlbum(String search){
@@ -94,12 +97,12 @@ public class Library { // clase en donde va a tener contenida en una lista todos
        
     }
     
-    /*
-    Metodo que busca por genre
-    Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
-    un puntero auxiliar para hacer las iteracione y recorrer la lista
-    luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
-    si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
+    /**
+    *Metodo que busca por genre
+    *Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
+    *un puntero auxiliar para hacer las iteracione y recorrer la lista
+    *luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
+    *si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
     */
     
     public Library SearchGenre(String search){
@@ -121,12 +124,12 @@ public class Library { // clase en donde va a tener contenida en una lista todos
        
     }
     
-    /*
-    Metodo que busca por nombre
-    Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
-    un puntero auxiliar para hacer las iteracione y recorrer la lista
-    luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
-    si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
+    /**
+    *Metodo que busca por nombre
+    *Para  hacer el algoritmo se necesitan una nueva lista donde se van acumular los resultados de la busqueda
+    *un puntero auxiliar para hacer las iteracione y recorrer la lista
+    *luego genera un ciclo while donde se va a recorrer la lista e ir buscando cuales de los nodos cumplen con lo buscado
+    *si el nodo no contiene lo buscado solo sigue adelante, al final se tendra una lista con los nodos que contengan lo que se busca
     */
     
     public Library SearchName(String search){
@@ -147,8 +150,8 @@ public class Library { // clase en donde va a tener contenida en una lista todos
        
        
     }
-    /*
-    metodo que imprime en consola
+    /**
+    *metodo que imprime en consola
     */
     
     public void printconsole(){
@@ -161,11 +164,11 @@ public class Library { // clase en donde va a tener contenida en una lista todos
             System.out.println(here.Name);
     }
     
-    /*
-    Metodo delete
-    En este metodo hace una busqueda por nombre que cuando encuentra el nodo con el nombre buscado
-    se ajustan los punteros al siguiente y al anterior para eliminar y asi el recolector de basura destruye el 
-    nodo.
+    /**
+    *Metodo delete
+    *En este metodo hace una busqueda por nombre que cuando encuentra el nodo con el nombre buscado
+    *se ajustan los punteros al siguiente y al anterior para eliminar y asi el recolector de basura destruye el 
+    *nodo.
     */
     
     public boolean delete(String name){
