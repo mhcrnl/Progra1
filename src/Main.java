@@ -342,18 +342,27 @@ public class Main extends javax.swing.JFrame {
 
     private void sNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNameActionPerformed
         // TODO add your handling code here:
+        Library any = new Library();
+        llenar2(song.SearchName(entrysearch.getText()));
     }//GEN-LAST:event_sNameActionPerformed
 
     private void SearchArtistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchArtistActionPerformed
         // TODO add your handling code here:
+        Library any = new Library();
+       
+        llenar2(song.SearchArtist(entrysearch.getText()));
     }//GEN-LAST:event_SearchArtistActionPerformed
 
     private void SearchAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchAlbumActionPerformed
         // TODO add your handling code here:
+        Library any = new Library();
+        llenar2(song.SearchAlbum(entrysearch.getText()));
     }//GEN-LAST:event_SearchAlbumActionPerformed
 
     private void SearchGenreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchGenreActionPerformed
         // TODO add your handling code here:
+        Library any = new Library();
+        llenar2(song.SearchGenre(entrysearch.getText()));
     }//GEN-LAST:event_SearchGenreActionPerformed
 
     /**
@@ -368,6 +377,16 @@ while(aux!=n.Last){
         }
         if (aux==n.Last)
             cSongs.addItem(aux.Artist +"  "+ aux.Name);
+}
+    public void llenar2(Library n){
+SongNode aux = n.First;
+sSongs.removeAllItems();
+while(aux!=n.Last){
+            sSongs.addItem(aux.Artist +"  "+ aux.Name);
+            aux=aux.next;
+        }
+        if (aux==n.Last)
+            sSongs.addItem(aux.Artist +"  "+ aux.Name);
 }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
