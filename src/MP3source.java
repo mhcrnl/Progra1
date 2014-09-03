@@ -14,9 +14,16 @@ import org.tritonus.share.sampled.file.TAudioFileFormat;
  *
  * @author marco_197
  */
+
+/*
+Aqui empieza la clase de mp3source que es la que permite reproducir
+
+*/
 public class MP3source {
     private BasicPlayer Player;
- 
+ /*
+    Aqui estan los metodos para 
+    */
 MP3source()
 {
     Player=new BasicPlayer();

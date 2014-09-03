@@ -18,6 +18,9 @@ public class SongNode {
     String Path;
     SongNode next;
     SongNode prev;
+    /*
+    metodo de constructor .
+    */
 
     public SongNode(String Name, String Artist, String Genre, String Album, int Time, String Cover, String Path) {
         this.Name = Name;
@@ -30,6 +33,16 @@ public class SongNode {
         this.next = null;
         this.prev = null;
     }
+    
+    /*
+    Estos son los metodos para poder asignar los valores a los nodos.
+    setname 
+    set artist
+    set genre
+    set album
+    set time
+    set path
+    */
 
     public void setName(String Name) {
         this.Name = Name;
