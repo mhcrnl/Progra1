@@ -17,8 +17,9 @@ public class NewMain {
     public static void main(String[] args) {
         // TODO code application logic here
        //Library n = new Library();
+       String ruta;
        GetPath x = new GetPath();
-       x.GetPath();
+       ruta = x.GetPath();
 //       System.out.println("Holis");
 //       n.InsertEnd("localoca", "shakira", "latin", "sale el sol", 13, "", "");
 //       n.InsertEnd("as", "as", "as", "as", 2, "", "");
@@ -28,7 +29,7 @@ public class NewMain {
        try
         {
             MP3source Player=new MP3source();
-            Player.AbrirFichero("/Users/marco_197/Downloads/05 - The Number Of The Beast.mp3");
+            Player.AbrirFichero(ruta);
             
             Player.Play();
             
@@ -43,6 +44,6 @@ public class NewMain {
 
                
         
-    }
+   }
     
 }

@@ -18,35 +18,18 @@ import javax.swing.JOptionPane;
  */
 public class GetPath {
     public String GetPath(){
-    String aux="";   
- String texto="";
-  try
-  {
-   /**llamamos el metodo que permite cargar la ventana*/
-   JFileChooser file=new JFileChooser();
-   file.showOpenDialog(null);
-   /**abrimos el archivo seleccionado*/
-   File abre=file.getSelectedFile();
- 
-   /**recorremos el archivo, lo leemos para plasmarlo
-   *en el area de texto*/
-   if(abre!=null)
-   {     
-      FileReader archivos=new FileReader(abre);
-      BufferedReader lee=new BufferedReader(archivos);
-      while((aux=lee.readLine())!=null)
-      {
-         texto+= aux+ "\n";
-      }
-         lee.close();
-    }    
-   }
-   catch(IOException ex)
-   {
-     JOptionPane.showMessageDialog(null,ex+"" +
-           "\nNo se ha encontrado el archivo",
-                 "ADVERTENCIA!!!",JOptionPane.WARNING_MESSAGE);
-    }
-  return texto;//El texto se almacena en el JTextArea
+    JFileChooser chooser = new JFileChooser();
+    chooser.setCurrentDirectory(new java.io.File("."));
+    chooser.setDialogTitle("choosertitle");
+    chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+    chooser.setAcceptAllFileFilterUsed(false);
+    if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+        System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+        System.out.println("getSelectedFile() : " + chooser.getSelectedFile().getAbsolutePath());
+    } else {
+        System.out.println("No Selection ");
+}
+        return chooser.getSelectedFile().getAbsolutePath() ;
+
 }
 }
