@@ -39,8 +39,7 @@ public class NewMain {
  
         catch(Exception Error)
         {
-            Error.printStackTrace();
-        }
+            Error.printStackTrace();        }
 
                
         
