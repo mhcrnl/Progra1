@@ -242,7 +242,7 @@ Library Song;
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
         // TODO add your handling code here:
-        Song.InsertEnd(Name.getText(),Artist.getText(), Genre.getText(), Album.getText(), Integer.parseInt(Time.getText()), sPath.getText(), sCover.getText());
+        Song.InsertEnd(Name.getText(),Artist.getText(), Genre.getText(), Album.getText(), Integer.parseInt(Time.getText()), sCover.getText(), sPath.getText());
         JOptionPane.showMessageDialog(null, "Success!!!", "Info: ", JOptionPane.INFORMATION_MESSAGE);
         Song.printconsole();
         dispose();
