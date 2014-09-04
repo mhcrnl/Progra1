@@ -4,11 +4,10 @@
  
 public class Library { // clase en donde va a tener contenida en una lista todos los nodos que contienen canciones.
     SongNode  First; //Puntero al primer nodo de la lista
-    SongNode  Last; // Puntero al ultimo nodo de la lista
-    {
-        First = null; //Inicializacion de los punteros
-        Last = null; //Inicializacion de los punteros
-    }
+     // Puntero al ultimo nodo de la lista
+    
+       
+    
     /**
     *Este es el metodo que verifica si la lista esta vacia
     *primero empieza con un una sentencia if preugntando que si el primer
@@ -31,15 +30,13 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     */
     public Library InsertEnd(String Name, String Artist, String Genre, String Album, int Time, String Cover, String Path){
         if (empty()){
-            SongNode song = new SongNode(Name,Artist,Genre,Album,Time,Cover,Path);
-            First = song;
-            Last= song;
+             First = new SongNode(Name,Artist,Genre,Album,Time,Cover,Path);
+            
+            
         }
         else{
-            SongNode song = new SongNode(Name,Artist,Genre,Album,Time,Cover,Path);
-            Last.next=song;
-            song.prev=Last;
-            Last=song;
+            First = new SongNode(Name,Artist,Genre,Album,Time,Cover,Path,First);
+            
         }
         return this;
     }
@@ -52,12 +49,14 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     */
     
     public Library SearchArtist(String search){
+        SongNode Aux;
         Library artistlist = new Library ();
         SongNode prev = null;
         SongNode here = First;
-        while (here != Last){
+        while (here != null){
             if (here.Artist==search){
                 artistlist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
+                
                 here = here.next;
             }
             else{
@@ -82,7 +81,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         Library albumlist = new Library ();
         SongNode prev = null;
         SongNode here = First;
-        while (here != Last){
+        while (here != null){
             if (here.Album == search){
                 albumlist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
@@ -109,7 +108,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         Library genrelist = new Library ();
         SongNode prev = null;
         SongNode here = First;
-        while (here != Last){
+        while (here != null){
             if (here.Genre == search){
                 genrelist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
@@ -134,10 +133,9 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     
     public Library SearchName(String search){
         Library namelist = new Library ();
-        SongNode prev = null;
         SongNode here = First;
-        while (here != Last){
-            if (here.Genre == search){
+        while (here != null){
+            if (here.Name == search){
                 namelist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
             }
@@ -156,12 +154,11 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     
     public void printconsole(){
         SongNode here = First;
-        while(here!=Last){
+        while(here!=null){
             System.out.println(here.Name);
             here=here.next;
         }
-        if (here==Last)
-            System.out.println(here.Name);
+       
     }
     
     /**
@@ -171,30 +168,29 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     *nodo.
     */
     
-    public boolean delete(String name){
-        SongNode prev = null;
-        SongNode here = First;
-        while(here!=Last){
-            if (here.Name==name){
-                if(prev==null){
-                    First = here.next;
-                    First.prev=null;
-                }
-                else{
-                    prev.next = here.next;
-                    SongNode temp = here.next;
-                    temp.prev=prev;
-                }
-                return true;
-                }
-            prev=here;
-            here=here.next;
-            }
-        if (name==Last.Name){
-            Last=here.prev;
-            return true;
-        }
-        return false;
-    }
-    
+//    public boolean delete(String name){
+//        SongNode here = First;
+//        while(here!=null){
+//            if (here.Name==name){
+//                if(prev==null){
+//                    First = here.next;
+//                    ;
+//                }
+//                else{
+//                    prev.next = here.next;
+//                    SongNode temp = here.next;
+//                    
+//                }
+//                return true;
+//                }
+//            prev=here;
+//            here=here.next;
+//            }
+//        if (name==Last.Name){
+//            Last=here.prev;
+//            return true;
+//        }
+//        return false;
+//    }
+//    
 }

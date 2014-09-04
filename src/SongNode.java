@@ -17,7 +17,7 @@ public class SongNode {
     String Cover;
     String Path;
     SongNode next;
-    SongNode prev;
+   
     /**
     *metodo de constructor .
     */
@@ -30,8 +30,20 @@ public class SongNode {
         this.Time = Time;
         this.Cover = Cover;
         this.Path = Path;
-        this.next = null;
-        this.prev = null;
+        
+        
+    }
+      public SongNode(String Name, String Artist, String Genre, String Album, int Time, String Cover, String Path,SongNode next) {
+        this.Name = Name;
+        this.Artist = Artist;
+        this.Genre = Genre;
+        this.Album = Album;
+        this.Time = Time;
+        this.Cover = Cover;
+        this.Path = Path;
+        this.next = next;
+        
+        
     }
     
     /**
@@ -104,9 +116,7 @@ public class SongNode {
         return next;
     }
 
-    public SongNode getPrev() {
-        return prev;
-    }
+  
     
     
    

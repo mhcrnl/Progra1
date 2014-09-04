@@ -25,7 +25,7 @@ public class NewMain {
        String ruta;
        GetPath x = new GetPath();
        //ruta = x.GetPath();
-       System.out.println("Holis si esta funcionando");
+  
        Main test =new Main(n);
        test.setVisible(true);
       

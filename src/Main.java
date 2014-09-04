@@ -336,6 +336,7 @@ public class Main extends javax.swing.JFrame {
         llenar(song);
         
         
+        
     }//GEN-LAST:event_brefreshActionPerformed
 
     private void sNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sNameActionPerformed
@@ -371,14 +372,18 @@ public class Main extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         Object aux = cSongs.getSelectedItem();
-        SongNode n = (SongNode) aux;
-        System.out.println(n.Path);
+        System.out.println(aux);
+        Library n = song.SearchName(aux.toString());
+        System.out.println(n);
+        SongNode temp = n.First;
+        System.out.println(temp);
+        System.out.println(temp.Name);
         try
         {
-            MP3source Player=new MP3source();
-            Player.AbrirFichero(n.Path);
-            
-            Player.Play();
+                 System.out.println("Holis si esta funcionando");
+            MP3source p=new MP3source();
+            p.AbrirFichero(temp.Path);            
+            p.Play();
         }
  
  
@@ -395,22 +400,20 @@ public class Main extends javax.swing.JFrame {
     public void llenar(Library n){
 SongNode aux = n.First;
 cSongs.removeAllItems();
-while(aux!=n.Last){
-            cSongs.addItem(aux);
+while(aux!=null){
+            cSongs.addItem(aux.Name);
             aux=aux.next;
         }
-        if (aux==n.Last)
-            cSongs.addItem(aux);
+   
 }
     public void llenar2(Library n){
 SongNode aux = n.First;
 sSongs.removeAllItems();
-while(aux!=n.Last){
+while(aux!=null){
             sSongs.addItem(aux.Artist +"  "+ aux.Name);
             aux=aux.next;
         }
-        if (aux==n.Last)
-            sSongs.addItem(aux.Artist +"  "+ aux.Name);
+      
 }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

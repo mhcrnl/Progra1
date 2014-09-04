@@ -24,7 +24,8 @@ public class MP3source {
  /**
   *Aqui estan los metodos para 
   */
-MP3source()
+public MP3source()
+        
 {
     Player=new BasicPlayer();
 }
