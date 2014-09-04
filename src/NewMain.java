@@ -22,6 +22,10 @@ public class NewMain {
         // TODO code application logic here
        Library n = new Library();
        n.InsertEnd("f", "", "", "", 0, "", "");
+       n.InsertEnd("w", "", "", "", 0, "", "");
+       n.InsertEnd("r", "", "", "", 0, "", "");
+       n.Delete("f");
+       //n.printconsole();
        String ruta;
        GetPath x = new GetPath();
        //ruta = x.GetPath();

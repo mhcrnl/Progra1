@@ -153,7 +153,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     */
     
     public void printconsole(){
-        SongNode here = First;
+        SongNode here = this.First;
         while(here!=null){
             System.out.println(here.Name);
             here=here.next;
@@ -168,29 +168,50 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     *nodo.
     */
     
-    public boolean delete(String name){
-        SongNode here = First;
-        while(here!=null){
-            if (here.Name==name){
-                if(First==null){
-                    First = here.next;
-                    ;
-                }
-                else{
-                    First.next = here.next;
-                    SongNode temp = here.next;
-                    
-                }
-                return true;
-                }
-            First=here;
-            here=here.next;
-            }
-        if (name==Last.Name){
-            Last=here.prev;
-            return true;
+    public void Delete (String name){ 
+        SongNode actual = this.First;
+        if (this.empty()){
+            System.out.println("The Library is empty");
         }
-        return false;
-    }
+        else{
+            if (actual.Name.equals(name)){
+                this.First = actual.next;
+            } else {
+                while (actual != null) {
+
+                    if (actual.next.Name.equals(name)) {
+                       actual.next=actual.next.next;
+                       break;
+                    }
+                    actual = actual.next;
+                }
+            }
+        }
+     }
+    
+//    public boolean delete(String name){
+//        SongNode here = First;
+//        while(here!=null){
+//            if (here.Name==name){
+//                if(First==null){
+//                    First = here.next;
+//                    ;
+//                }
+//                else{
+//                    First.next = here.next;
+//                    SongNode temp = here.next;
+//                    
+//                }
+//                return true;
+//                }
+//            First=here;
+//            here=here.next;
+//            }
+//        if (name==Last.Name){
+//            Last=here.prev;
+//            return true;
+//        }
+//        return false;
+//    }
     
 }

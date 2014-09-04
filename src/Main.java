@@ -35,7 +35,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        bplay = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,10 +63,10 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton5.setText("Play");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        bplay.setText("Play");
+        bplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                bplayActionPerformed(evt);
             }
         });
 
@@ -113,7 +113,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(117, 117, 117))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(133, 133, 133)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bplay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,7 +125,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
+                    .addComponent(bplay)
                     .addComponent(jButton8))
                 .addGap(11, 11, 11)
                 .addComponent(jLabel5)
@@ -171,6 +171,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         deletebotton.setText("Delete");
+        deletebotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebottonActionPerformed(evt);
+            }
+        });
 
         cSongs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -307,9 +312,13 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        names.setText("");
+        sArtist.setText("");
+        SGenre.setText("");
+        sAlbum.setText("");
         try
         {
-        p.Pausa(); }
+        p.Stop(); }
  
  
  
@@ -376,7 +385,7 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cSongsActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void bplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bplayActionPerformed
         // TODO add your handling code here:
         Object aux = cSongs.getSelectedItem();
         Library n = song.SearchName(aux.toString());
@@ -399,11 +408,16 @@ public class Main extends javax.swing.JFrame {
         {
             Error.printStackTrace();
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_bplayActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void deletebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebottonActionPerformed
+//        Object aux = cSongs.getSelectedItem();
+//        Library n = song.SearchName(aux.toString());
+//        delete(aux.toString());
+        
+    }//GEN-LAST:event_deletebottonActionPerformed
+
+    
     public void llenar(Library n){
 SongNode aux = n.First;
 cSongs.removeAllItems();
@@ -456,12 +470,12 @@ while(aux!=null){
     private javax.swing.JButton SearchAlbum;
     private javax.swing.JButton SearchArtist;
     private javax.swing.JButton SearchGenre;
+    private javax.swing.JButton bplay;
     private javax.swing.JButton brefresh;
     private javax.swing.JComboBox cSongs;
     private javax.swing.JButton deletebotton;
     private javax.swing.JButton editbotton;
     private javax.swing.JTextField entrysearch;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
