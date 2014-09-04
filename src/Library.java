@@ -168,29 +168,29 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     *nodo.
     */
     
-//    public boolean delete(String name){
-//        SongNode here = First;
-//        while(here!=null){
-//            if (here.Name==name){
-//                if(prev==null){
-//                    First = here.next;
-//                    ;
-//                }
-//                else{
-//                    prev.next = here.next;
-//                    SongNode temp = here.next;
-//                    
-//                }
-//                return true;
-//                }
-//            prev=here;
-//            here=here.next;
-//            }
-//        if (name==Last.Name){
-//            Last=here.prev;
-//            return true;
-//        }
-//        return false;
-//    }
-//    
+    public boolean delete(String name){
+        SongNode here = First;
+        while(here!=null){
+            if (here.Name==name){
+                if(First==null){
+                    First = here.next;
+                    ;
+                }
+                else{
+                    First.next = here.next;
+                    SongNode temp = here.next;
+                    
+                }
+                return true;
+                }
+            First=here;
+            here=here.next;
+            }
+        if (name==Last.Name){
+            Last=here.prev;
+            return true;
+        }
+        return false;
+    }
+    
 }
