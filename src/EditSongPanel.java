@@ -13,19 +13,25 @@ import javax.swing.JOptionPane;
  */
 public class EditSongPanel extends javax.swing.JFrame {
     Library song;
+    String bus;
+    int t;
     /**
      * Creates new form EditSongPanel
      */
-    public EditSongPanel(Library n) {
+    public EditSongPanel(Library n, String b) {
         initComponents();
+        bus = b;
         song = n;
+        
         SongNode init = song.First;
+        t = init.getTime();
         path.setText(init.getPath());
         name.setText(init.getName());
         album.setText(init.getAlbum());
         cover.setText(init.Cover);
         genre.setText(init.Genre);
         artist.setText(init.Artist);
+        song.Delete(bus);
     }
 
     /**
@@ -232,12 +238,13 @@ public class EditSongPanel extends javax.swing.JFrame {
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
         // TODO add your handling code here:
         SongNode Aux = song.First; 
-        Aux.setPath(path.getText());
-        Aux.setName(name.getText());
-        Aux.setAlbum(album.getText());
-        Aux.setCover(cover.getText());
-        Aux.setGenre(genre.getText());
-        Aux.setArtist(artist.getText());
+//        Aux.setPath(path.getText());
+//        Aux.setName(name.getText());
+//        Aux.setAlbum(album.getText());
+//        Aux.setCover(cover.getText());
+//        Aux.setGenre(genre.getText());
+//        Aux.setArtist(artist.getText());
+        song.InsertEnd(name.getText(), artist.getText(), genre.getText(), album.getText(), t,cover.getText(), path.getText());
         JOptionPane.showMessageDialog(null, "Success!!!", "Info: ", JOptionPane.INFORMATION_MESSAGE);
         dispose();
     }//GEN-LAST:event_OKActionPerformed

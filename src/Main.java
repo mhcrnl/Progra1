@@ -1,6 +1,10 @@
 
+import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -46,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         sArtist = new javax.swing.JLabel();
         SGenre = new javax.swing.JLabel();
         sAlbum = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        sCover = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Addbotton = new javax.swing.JButton();
         editbotton = new javax.swing.JButton();
@@ -87,8 +91,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setText("Cover");
 
-        jLabel7.setText("jLabel7");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -116,7 +118,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(bplay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sCover, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -150,7 +152,7 @@ public class Main extends javax.swing.JFrame {
                         .addContainerGap(72, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sCover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 
@@ -349,7 +351,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object aux = cSongs.getSelectedItem();
         Library n = song.SearchName(aux.toString());
-        EditSongPanel edit = new EditSongPanel(song);
+        EditSongPanel edit = new EditSongPanel(song, aux.toString());
         edit.setVisible(true);
     }//GEN-LAST:event_editbottonActionPerformed
 
@@ -400,6 +402,9 @@ public class Main extends javax.swing.JFrame {
         sArtist.setText(temp.Artist);
         SGenre.setText(temp.Genre);
         sAlbum.setText(temp.Album);
+       ImageIcon micon = createImageIcon(temp.Cover);
+       sCover.setIcon(micon);
+       
         try
         {
                  System.out.println("Holis si esta funcionando");
@@ -441,6 +446,15 @@ while(aux!=null){
             aux=aux.next;
         }
       
+}
+    protected ImageIcon createImageIcon(String path) {
+    java.net.URL imgURL = getClass().getResource(path);
+    if (imgURL != null) {
+        return new ImageIcon(imgURL);
+    } else {
+        System.err.println("Couldn't find file: " + path);
+        return null;
+    }
 }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -489,13 +503,13 @@ while(aux!=null){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel names;
     private javax.swing.JLabel sAlbum;
     private javax.swing.JLabel sArtist;
+    private javax.swing.JLabel sCover;
     private javax.swing.JButton sName;
     private javax.swing.JComboBox sSongs;
     // End of variables declaration//GEN-END:variables
