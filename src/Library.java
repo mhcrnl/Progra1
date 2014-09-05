@@ -54,7 +54,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         SongNode prev = null;
         SongNode here = First;
         while (here != null){
-            if (here.Artist==search){
+            if (here.Artist.equals(search)){
                 artistlist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 
                 here = here.next;
@@ -82,7 +82,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         SongNode prev = null;
         SongNode here = First;
         while (here != null){
-            if (here.Album == search){
+            if (here.Album.equals(search)){
                 albumlist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
             }
@@ -109,7 +109,7 @@ public class Library { // clase en donde va a tener contenida en una lista todos
         SongNode prev = null;
         SongNode here = First;
         while (here != null){
-            if (here.Genre == search){
+            if (here.Genre.equals(search)){
                 genrelist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
             }
@@ -133,9 +133,9 @@ public class Library { // clase en donde va a tener contenida en una lista todos
     
     public Library SearchName(String search){
         Library namelist = new Library ();
-        SongNode here = First;
+        SongNode here = this.First;
         while (here != null){
-            if (here.Name == search){
+            if (here.Name.equals(search)){
                 namelist.InsertEnd(here.Name, here.Artist, here.Genre, here.Album, here.Time, here.Cover, here.Path);
                 here = here.next;
             }

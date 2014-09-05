@@ -300,11 +300,17 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -343,7 +349,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object aux = cSongs.getSelectedItem();
         Library n = song.SearchName(aux.toString());
-        EditSongPanel edit = new EditSongPanel(n);
+        EditSongPanel edit = new EditSongPanel(song);
         edit.setVisible(true);
     }//GEN-LAST:event_editbottonActionPerformed
 
@@ -411,9 +417,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_bplayActionPerformed
 
     private void deletebottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebottonActionPerformed
-//        Object aux = cSongs.getSelectedItem();
-//        Library n = song.SearchName(aux.toString());
-//        delete(aux.toString());
+        Object aux = cSongs.getSelectedItem();
+ 
+        song.Delete(aux.toString());
         
     }//GEN-LAST:event_deletebottonActionPerformed
 

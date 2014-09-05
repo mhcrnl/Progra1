@@ -19,7 +19,7 @@ public class EditSongPanel extends javax.swing.JFrame {
     public EditSongPanel(Library n) {
         initComponents();
         song = n;
-        SongNode init = n.First;
+        SongNode init = song.First;
         path.setText(init.getPath());
         name.setText(init.getName());
         album.setText(init.getAlbum());
